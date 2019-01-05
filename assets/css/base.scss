@@ -1,0 +1,459 @@
+//FLOCSS
+
+// ==========================================================================
+// Foundation
+// ==========================================================================
+
+@import "reset";
+
+body{
+  color: #707070;
+}
+body a{
+  color: #999;
+  text-decoration: none;
+}
+body a:hover{
+  text-decoration: underline;
+}
+
+//*==================
+//　▼定数・変数定義▼
+//==================
+$pcwidth:1024px;
+$txtwidth:720px;
+
+
+// ==========================================================================
+// Layout
+// ==========================================================================
+
+//==================
+//▼ブレイクポイントのルール▼
+// 〜767px：スマートフォン
+// 768px〜1024px：タブレット
+// 1025px〜：PC
+//==================
+
+//デバイス共通
+body{
+  background: -moz-linear-gradient(top right, #14C4DE 10%, #FFF);
+  background: -webkit-linear-gradient(top right, #14C4DE 10%, #FFF);
+  background: linear-gradient(to bottom left, #14C4DE 10%, #FFF);
+}
+#l-hero{
+  width: 100%;
+  height:100%;
+  background: url(../images/img_hero.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+header{
+  width: 100%;
+  height:100%;
+}
+.l-animation{
+  position: absolute;
+  left: 0;
+  top:0;
+}
+#l-head{
+  z-index: 999;
+}
+.l-comingsoon{
+  z-index: 9990;
+}
+
+@media screen and (max-width:767px) {//スマートフォン
+  #l-hero{
+    background-position: -230px -80px;
+    background-size: 880px auto;
+  }
+  #l-head{
+    position: fixed;
+    left: 2.5%;
+    top: 10px;
+    width: 95%;
+    height: 55px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+  }
+  #l-lead{
+    position: absolute;
+    width: 100%;
+    //height: auto;
+    bottom:0;
+    background: -moz-linear-gradient(bottom, rgba(255,255,255,0.8) 80%, rgba(255,255,255,0));
+    background: -webkit-linear-gradient(bottom, rgba(255,255,255,0) 80%, rgba(255,255,255,0));
+    background: linear-gradient(to top, rgba(255,255,255,0.8) 80%, rgba(255,255,255,0));
+    //background: rgba(255,255,255,0.8);
+    padding: 50px 15px 15px;
+  }
+
+  @media screen and (orientation: landscape) {// 横向き
+    #l-head{
+      position: fixed;
+      right: 0;
+      top: 0;
+      left:auto;
+      width: 70px;
+      height: 100%;
+      background: #FFF;
+      box-shadow:-3px 0px 6px 0px rgba(0,0,0,0.2);
+      border-radius: 0;
+    }
+    #l-hero{
+      background-position: -130px -50px;
+      background-size: 600px auto;
+    }
+    #l-lead{
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      left:50%;
+      background: none;
+    }
+  }
+}
+@media screen and (min-width:768px) {//PC・タブレット共通
+  #l-head{
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 70px;
+    height: 100%;
+    background: #FFF;
+    box-shadow:-3px 0px 6px 0px rgba(0,0,0,0.2);
+  }
+  #l-lead{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left:50%;
+  }
+
+}
+@media screen and (min-width:768px) and (max-width:1024px) {//タブレット
+  #l-hero{
+    background-position: -220px -100px;
+    background-size: 1000px auto;
+  }
+  @media screen and (orientation: portrait) {// 縦向き
+    #l-hero{
+      background-position: -300px -150px;
+        background-size: 1200px auto;
+    }
+    #l-lead{
+      position: absolute;
+      width: 100%;
+      height: auto;
+      //height: auto;
+      bottom:0;
+      left: 0;
+      //background: -moz-linear-gradient(bottom, rgba(255,255,255,0.8) 80%, rgba(255,255,255,0));
+      //background: -webkit-linear-gradient(bottom, rgba(255,255,255,0) 80%, rgba(255,255,255,0));
+      //background: linear-gradient(to top, rgba(255,255,255,0.8) 80%, rgba(255,255,255,0));
+      //background: rgba(255,255,255,0.8);
+      padding: 50px 15px 15px;
+    }
+  }
+}
+
+@media screen and (min-width:1025px) {//PC
+  #l-hero{
+    background-position: -320px -160px;
+    background-size: 1240px auto;
+  }
+}
+// ==========================================================================
+// Object
+// ==========================================================================
+//デバイス共通
+@media screen and (max-width:767px) {//スマートフォン
+
+  @media screen and (orientation: landscape) {// 横向き
+
+  }
+}
+@media screen and (min-width:768px) {//PC・タブレット共通
+
+}
+@media screen and (min-width:768px) and (max-width:1024px) {//タブレットのみ
+
+  @media screen and (orientation: portrait) {// 縦向き
+
+  }
+}
+
+@media screen and (min-width:1025px) {//PCのみ
+}
+// -----------------------------------------------------------------
+// Component
+// -----------------------------------------------------------------
+//デバイス共通
+.c-sitename{
+  text-indent: -9999px;
+  height: 100%;
+}
+.c-anime_placeholder{
+  position: absolute;
+  display: inline-block;
+  //opacity: 0;
+}
+.c-anime_parts{
+  width: 20px;
+  height: auto;
+}
+.c-comingsoon_bg,
+.c-comingsoon_txt{
+  position: absolute;
+  height: auto;
+}
+.c-comingsoon_bg{
+  z-index: 9998;
+}
+.c-comingsoon_txt{
+  z-index: 9999;
+}
+
+@media screen and (max-width:767px) {//スマートフォン
+  .c-sitelogo{
+    margin: 9px 0 0 15px;
+    display: inline-block;
+    float: left;
+  }
+  .c-sitelogo img{
+    width: 34px;
+    height: auto;
+  }
+  .c-sitename{
+    display: inline-block;
+    width:70%;
+    //height:45px;
+    background: url(../images/siteid_h.png);
+    background-repeat: no-repeat;
+    //background-size: 54px auto;
+    background-size: 95%;
+    background-position: 10px 12px;
+  }
+  .c-lead {
+    line-height: 2;
+    color: #0094AA;
+    font-size: 0.8rem;
+    letter-spacing: 0.2rem;
+  }
+  .c-comingsoon_bg{
+    right:5px;
+    bottom:100px;
+    width: 100px;
+  }
+  .c-comingsoon_txt{
+    right:15px;
+    bottom:114px;
+    width: 80px;
+  }
+  .c-anime_parts{
+    width: 15px;
+    height: auto;
+  }
+  .c-anime_01{ top:120px; left:150px; }//寺
+  .c-anime_02{ top:100px; left:400px; }//工場
+  .c-anime_03{ top:240px; left:100px; }//商店街
+  .c-anime_04{ top:220px; left:240px; }//マンション
+  .c-anime_05{ top:180px; left:480px; }//電車
+  .c-anime_06{ top:290px; left:160px; }//駅舎
+  .c-anime_07{ top:240px; left:580px; }//公園
+  .c-anime_08{ top:360px; left:210px; }//ソラマチ
+  .c-anime_09{ top:430px; left:120px; }//学校
+  .c-anime_10{ top:470px; left:290px; }//倉庫
+  .c-anime_11{ top:50px; left:500px; }//雑居ビル
+  @media screen and (orientation: landscape) {// 横向き
+    .c-sitename{
+      height:100%;
+      background: url(../images/siteid_v.png);
+      background-repeat: no-repeat;
+      //background-size: 54px auto;
+      background-size: 45%;
+      background-position: 20px 5px;
+    }
+    .c-lead {
+      position: absolute;
+      top:80px;
+      left:45%;
+      -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
+      line-height: 2;
+      font-size: 0.7rem;
+      color: #FFF;
+      letter-spacing: 0.2rem;
+    }
+    .c-comingsoon_bg{
+      right:15px;
+      bottom:10px;
+      width: 80px;
+    }
+    .c-comingsoon_txt{
+      right:20px;
+      bottom:18px;
+      width: 70px;
+    }
+    .c-anime_01{ top:50px; left:100px; }//寺
+    .c-anime_02{ top:30px; left:250px; }//工場
+    .c-anime_03{ top:100px; left:70px; }//商店街
+    .c-anime_04{ top:90px; left:170px; }//マンション
+    .c-anime_05{ top:70px; left:270px; }//電車
+    .c-anime_06{ top:140px; left:110px; }//駅舎
+    .c-anime_07{ top:110px; left:290px; }//公園
+    .c-anime_08{ top:170px; left:160px; }//ソラマチ
+    .c-anime_09{ top:180px; left:80px; }//学校
+    .c-anime_10{ top:190px; left:200px; }//倉庫
+    .c-anime_11{ top:200px; left:300px; }//雑居ビル
+  }
+}
+@media screen and (min-width:768px) {//PC・タブレット共通
+  .c-sitelogo{
+    margin: 15px 0 0 15px;
+  }
+  .c-sitelogo img{
+    width: 40px;
+    height: auto;
+  }
+  .c-sitename{
+    background: url(../images/siteid_v.png);
+    background-repeat: no-repeat;
+    //background-size: 54px auto;
+    background-size: 45%;
+    background-position: 20px 5px;
+  }
+  .c-lead {
+    position: absolute;
+    top:65px;
+    left:45%;
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    line-height: 2.4;
+    color: #FFF;
+    letter-spacing: 0.4rem;
+  }
+  .c-comingsoon_bg{
+    right:15px;
+    bottom:20px;
+    width:120px;
+  }
+  .c-comingsoon_txt{
+    right:30px;
+    bottom:40px;
+    width: 90px;
+  }
+}
+@media screen and (min-width:768px) and (max-width:1024px) {//タブレット
+  .c-lead {
+    font-size: 0.9rem;
+  }
+  .c-anime_01{ top:150px; left:200px; }//寺
+  .c-anime_02{ top:100px; left:500px; }//工場
+  .c-anime_03{ top:250px; left:150px; }//商店街
+  .c-anime_04{ top:240px; left:340px; }//マンション
+  .c-anime_05{ top:180px; left:540px; }//電車
+  .c-anime_06{ top:350px; left:230px; }//駅舎
+  .c-anime_07{ top:280px; left:580px; }//公園
+  .c-anime_08{ top:420px; left:320px; }//ソラマチ
+  .c-anime_09{ top:510px; left:190px; }//学校
+  .c-anime_10{ top:540px; left:400px; }//倉庫
+  .c-anime_11{ top:560px; left:600px; }//雑居ビル
+  @media screen and (orientation: portrait) {// 縦向き
+    .c-lead {
+      position: relative;
+      top:0;
+      left: 0;
+      line-height: 2;
+      color: #0094AA;
+      font-size: 0.8rem;
+      letter-spacing: 0.2rem;
+      -webkit-writing-mode: horizontal-tb;
+      -ms-writing-mode: lr-td;
+      writing-mode: horizontal-tb;
+    }
+    .c-anime_01{ top:130px; left:200px; }//寺
+    .c-anime_02{ top:70px; left:580px; }//工場
+    .c-anime_03{ top:280px; left:150px; }//商店街
+    .c-anime_04{ top:260px; left:340px; }//マンション
+    .c-anime_05{ top:180px; left:630px; }//電車
+    .c-anime_06{ top:400px; left:230px; }//駅舎
+    .c-anime_07{ top:310px; left:680px; }//公園
+    .c-anime_08{ top:470px; left:310px; }//ソラマチ
+    .c-anime_09{ top:590px; left:180px; }//学校
+    .c-anime_10{ top:620px; left:400px; }//倉庫
+    .c-anime_11{ top:630px; left:650px; }//雑居ビル
+  }
+}
+
+@media screen and (min-width:1025px) {//PC
+  .c-lead {
+    font-size: 1.1rem;
+  }
+  .c-anime_01{ top:150px; left:200px; }//寺
+  .c-anime_02{ top:120px; left:570px; }//工場
+  .c-anime_03{ top:300px; left:120px; }//商店街
+  .c-anime_04{ top:270px; left:360px; }//マンション
+  .c-anime_05{ top:200px; left:630px; }//電車
+  .c-anime_06{ top:400px; left:230px; }//駅舎
+  .c-anime_07{ top:320px; left:680px; }//公園
+  .c-anime_08{ top:470px; left:320px; }//ソラマチ
+  .c-anime_09{ top:570px; left:120px; }//学校
+  .c-anime_10{ top:640px; left:420px; }//倉庫
+  .c-anime_11{ top:650px; left:700px; }//雑居ビル
+}
+// -----------------------------------------------------------------
+// Project
+// -----------------------------------------------------------------
+//デバイス共通
+
+@media screen and (max-width:767px) {//スマートフォン
+
+  @media screen and (orientation: landscape) {// 横向き
+
+  }
+}
+@media screen and (min-width:768px) {//PC・タブレット共通
+
+}
+@media screen and (min-width:768px) and (max-width:1024px) {//タブレット
+
+  @media screen and (orientation: portrait) {// 縦向き
+
+  }
+}
+@media screen and (min-width:1025px) {//PC
+}
+// -----------------------------------------------------------------
+// Utility
+// -----------------------------------------------------------------
+//webfonts
+.font-412{
+  font-family: kan412typos-std, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.font-415{
+  font-family: kan415typos-std, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.font-48{
+  font-family: kan48typos-std, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.font-din{
+  font-family: din-2014,sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.bgtrans{
+  background: rgba(255,255,255,0.5);
+}
